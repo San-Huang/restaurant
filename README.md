@@ -1,6 +1,6 @@
 # 我的餐廳清單
 
-![Restaurant List截圖](./public/picture/截圖2023-09-15上午8.11.59.png)
+![Restaurant List截圖](./screenshot.png)
 
 ## 介紹
 
