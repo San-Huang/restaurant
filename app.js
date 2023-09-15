@@ -8,8 +8,8 @@ const port = 3000
 
 app.engine('.hbs', engine({extname: '.hbs'})) //engine就是告訴express我要用樣板引擎handlebars
 app.set('view engine', '.hbs') //set?
-app.set('views', './views')
-app.use(express.static('public')) //use
+app.set('views', './views') //View文件的存放位置。
+app.use(express.static('public')) //靜態資源(圖像、CSS 文件和客戶端JavaScript文件等)的根目錄設置為 'public' 目錄
 
 app.get('/', (req, res) => {
     res.render('index', { restaurantsData }) //將restaurant.json的資料丟進index
@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     const keywords = req.query.keywords
     const keyword = req.query.keywords.trim().toLowerCase()
     if (!req.query.keywords) {
-      return res.redirect("/")
+      return res.redirect("/") //redirect就是若找不到或無法進入就自動導至"/"
     }
 
     const filterRestaurantsData = restaurantsData.filter(
